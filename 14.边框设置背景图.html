@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	  html{height: 100%;}
+        p{margin:0;padding-left: 200px}
+	  body{margin:0;height: inherit;padding: 1px;}
+           
+		.test{
+    			width: 300px;
+    			height: 300px;
+          margin:30px auto;
+          border:30px solid transparent;
+    		  background:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),url(img/ggg.jpg);
+          background-clip:padding-box,border-box;
+          background-size: cover;
+          background-origin:border-box;   
+		}
+	</style>
+</head>
+<body>
+     
+       	   <div class="test">
+               边框为背景图
+           </div>
+           <div>
+           <hr>
+            <p>这样写渐变色会覆盖到padding-box，背景图将覆盖到border-box</p>
+           <p>
+              background:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),url(img/ggg.jpg);
+              <br>
+              background-clip:padding-box,border-box;
+           </p>
+           
+           <hr>
+             <p>这样写是为了将被背景图片的拉伸覆盖区域从padding-box的左上角，改为border-box;的左上角</p>
+             <p>
+                background-size: cover;<br>
+                background-origin:border-box;<br>
+             </p>
+             <hr>
+           </div>
+             
+
+         
+</body>
+</html>

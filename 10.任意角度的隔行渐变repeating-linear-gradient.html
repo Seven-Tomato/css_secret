@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+        如果某个色标的位置比整个列表中，在它之前色标的位置值都小，则该色标位置的值会被设置为它前面所有色标位置值中最大的那个值
+
+          background: repeating-linear-gradient(0deg,red,red 10px,
+              	                                     blue 0,blue 20px
+              	                                );
+          等价于下面   	
+          
+           background: repeating-linear-gradient(0deg,red,red 10px,
+              	                                      blue 20px,blue 20px
+              	                                );                                
+	 -->
+	<style type="text/css">
+      html{height: 100%;}
+      body{margin:0;}
+        h4{text-align: center;}  
+
+  		.test{width:200px;
+  	      	  height: 200px;
+        	  margin:10px auto;
+              background: repeating-linear-gradient(0deg,#fbcc06 10px,#05a6f7 20px);
+             
+  		}
+  		.test2{width:200px;
+  	      	  height: 200px;
+        	  margin:10px auto;
+              background: repeating-linear-gradient(0deg,#fbcc06,#fbcc06 10px,
+              	                                         #05a6f7 0,#05a6f7 20px
+              	                                    );
+              /*,#fbcc06颜色从0到10px渐变 #05a6f7从10px到20px渐变 宽度比例1:1*/
+         
+  		}
+  		.test3{width:200px;
+  	      	  height: 200px;
+        	  margin:10px auto;
+              background: repeating-linear-gradient(0deg,#fbcc06,#fbcc06 15px
+              	                                        ,#05a6f7 0,#05a6f7 20px
+              	                                    );
+            /*,#fbcc06颜色从0到15px渐变 #05a6f7从15px到30px渐变 宽度比例1:2*/
+  		}
+	</style>
+</head>
+<body>
+    <div style="width: 50%;float:left;">
+        <h4>任意角度隔行渐变条纹</h4>
+        <div class="test"></div> 
+        <div class="test2"></div> 
+        <div class="test3"></div> 
+      </div>
+</body>
+</html>

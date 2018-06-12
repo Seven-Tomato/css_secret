@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!-- 
+      重复平铺的几何图案很美观，但看起来可能有一些呆板。
+      自然界中的事物都不是以无限平铺的方式存在的:树林、花园、
+      如果想让背景图案尽可能显得自然，想办法让人忽略，或者难以察觉，每轮渐变之间的‘间隙’
+	 -->
+	 <style type="text/css">
+	    html{height: 100%;}
+        body{margin:0;}
+        p{text-align: center;}
+	 	.box{width: 100%;
+             height: 150px;
+             background: linear-gradient(90deg
+             	                          ,red 10%
+             	                          ,yellow 0,yellow 30%
+             	                          ,blue 0,blue 45%
+             	                          ,green 0,green 65%
+             	                          ,#999 0
+             	                          );
+           
+             background-size: 100px 100%;
+	 	}
+	    .box2{
+	    	position: relative;
+	    	background:#999;
+	    	background-image:linear-gradient(90deg,red 15px,transparent 0),
+             	             linear-gradient(90deg,yellow 20px,transparent 0),            
+             	             linear-gradient(90deg,blue 25px,transparent 0);             
+             	                         
+           /*设置每个图片的宽度，*/
+             background-size: 100px 100%,
+                              200px 100%,
+                              50px 100%;
+
+	    }
+.small_box2{position: absolute;border:3px dotted black;top: -4px;left: 195px;height: 100%;width: 200px}
+
+/*------------3互质随机------------------*/
+          .box3{
+	    	position: relative;
+	    	background:#999;
+	    	background-image:linear-gradient(90deg,red 15px,transparent 0),
+             	             linear-gradient(90deg,yellow 20px,transparent 0),            
+             	             linear-gradient(90deg,blue 25px,transparent 0);             
+             	                         
+           /*设置每个图片的宽度之间互为质数*/
+             background-size:  37px 100%,
+                               41px 100%,
+                               83px 100%;
+	    }
+	 </style>
+</head>
+<body>
+      <div style="overflow: hidden;">
+      	<img src="img/a.png" style="float: left;">
+      	重复平铺的几何图案很美观，但看起来可能有一些呆板。<br>
+       自然界中的事物都不是以无限平铺的方式存在的:树林、花园、<br>
+       如果想让背景图案尽可能显得自然，想办法让人忽略，或者难以察觉，每轮渐变之间的‘间隙’
+      </div>
+
+      <p>1.重复有规律的渐变</p>
+      <div class="box"></div>
+
+      <!-- 实现过程：
+            一种颜色作为背景，另外三种颜色作为条纹，
+            然后再让条纹以不同的间隔进行平铺 
+      -->
+      <p>2.模拟随机渐变</p>
+      <div class="box box2">
+      	 <div class="small_box2"></div>
+      </div>
+      <!-- 对上面的实现过程优化：
+            上面三种颜色   background-size: 100px 100%,
+                                            200px 100%,
+                                            50px 100%;
+            也就是说 这三种颜色组成的渐变（贴片）会在200px重复一次
+            因为200px 是100px 200px 20px的最小公倍数
+
+             质数：
+             除1以外能被能被1和自身整除的数（2、3、5、7、11、13、17............ ）
+            为了使上面的随机性更加真实
+            也就是说只要让最小公倍数最大化，
+            就能实现每个贴片尺寸的最大化
+            最小公倍数最大化，几个数字之间最好是
+            互为质数（除了1以外几个数之间没有公约数，但是他们自身可以有约束）  
+            如：
+            10和17是互质的（他们没有公约数） 但是10不是质数;
+            那么可以总结一下：
+            数字构成互质关系的条件：一个质数与其它所有（不是自身倍数）的数字
+            
+            那么改变上面三种颜色的宽度   background-size: 37px 100%,
+                                                          41px 100%,
+                                                          83px 100%;
+            一个（贴片）会在37*41*83=105439px处重复一次 
+            显然屏幕的分辨率没有达到这么大的值                                             
+      -->
+       <p>3.互质数随机渐变</p>
+      <div class="box box3"></div>
+</body>
+</html>

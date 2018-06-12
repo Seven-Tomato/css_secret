@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+     background: linear-gradient(red 33.3%,blue 0,blue 66.6%,red 0);
+     red从0到33.3%
+     blue从33.3%到66.6%
+     red从66.6%到结束
+     规定：
+      如果某个色标的位置比整个列表中，在它之前色标的位置值都小，则该色标位置的值会被设置为它前面所有色标位置值中最大的那个值（即这里blue 0就相当于blue 33.3%）
+	 -->
+	<style type="text/css">
+	    html{height: 100%;}
+      body{margin:0;}
+        h4{text-align: center;}  
+
+  		.test{width:200px;
+  	      	height: 200px;
+        	  margin:10px auto;
+            background: linear-gradient(#fbcc06,#05a6f7);
+  		}
+      .test0{width:200px;
+            height: 200px;
+            margin:10px auto;
+            background: linear-gradient(#fbcc06 50%,#05a6f7 0);
+      }
+     
+      .test1{width:200px;
+            height: 200px;
+            margin:10px auto;
+            background: linear-gradient(#fbcc06,#05a6f7);
+            background-size:100% 20px;/*控制背景渐变的大小*/ 
+      }
+       .test2{width:200px;
+            height: 200px;
+            margin:10px auto;
+            background: linear-gradient(#fbcc06 50%,#05a6f7 0);
+            background-size:100% 20px;
+      }
+       .test3{width:200px;
+            height: 200px;
+            margin:10px auto;
+            background: linear-gradient(#fbcc06 33.3%,#05a6f7 0,#05a6f7 66.6%,red 0);
+            background-size:100% 20px;
+      }
+      /*
+      垂直渐变(默认方向to bottom从上到下)to right(或者90deg)
+      #fbcc06 50%,#05a6f7 0  第二个值的0表示将剩下的50%位置用#05a6f7填充
+      */ 
+      .test4{width:200px;
+            height: 200px;
+            margin:10px auto;
+            background: linear-gradient(to right ,#fbcc06,#05a6f7);
+      }
+      .test5{width:200px;
+            height: 200px;
+            margin:10px auto;
+            background: linear-gradient(90deg ,#fbcc06 50%,#05a6f7 0);
+      }
+      .test6{width:200px;
+            height: 200px;
+            margin:10px auto;
+            background: linear-gradient(90deg ,#fbcc06,#05a6f7);
+            background-size:20px 100%;
+      }
+      .test7{width:200px;
+            height: 200px;
+            margin:10px auto;
+             background: linear-gradient(90deg ,#fbcc06 50%,#05a6f7 0);
+            background-size:20px 100%;
+      }
+      .test8{width:200px;
+            height: 200px;
+            margin:10px auto;
+            background: linear-gradient(90deg ,#fbcc06 33.3%,#05a6f7 0,#05a6f7 66.6%,red 0);
+            background-size:20px 100%;
+      }
+	</style>
+</head>
+<body>
+      <div style="width: 50%;float:left;">
+        <h4>水平条纹的生成</h4>
+        <div class="test"></div> 
+        <div class="test0"></div>  
+        <div class="test1"></div>   
+        <div class="test2"></div>   
+        <div class="test3"></div>   
+      </div>
+      <div style="width: 50%;float: right;"> 
+       <h4>垂直条纹的生成</h4>
+       <div class="test4"></div>   
+       <div class="test5"></div>   
+       <div class="test6"></div>   
+       <div class="test7"></div>  
+       <div class="test8"></div>   
+      </div>
+     
+       
+</body>
+</html>

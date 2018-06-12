@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	  html{height: 100%;}
+	  body{margin:0;height: inherit;padding: 1px;}
+    p{padding:1em;}  
+		.test{
+    			width: 400px;
+    			height: 200px;
+          margin:30px auto;
+          border:1px solid transparent;
+    		  background:linear-gradient(rgba(255, 255, 255,1),rgba(255, 255, 255, 1)) padding-box,
+                     repeating-linear-gradient(-45deg,white,white 2%
+                                              ,#000 0,#000 3%
+                                              
+                                              ),border-box;
+       
+          background-origin:border-box; 
+           animation: run 4s linear infinite;
+         
+		} 
+
+     @keyframes run
+    {
+      to{background-position: 100px 100px;}
+    }
+
+     
+	</style>
+</head>
+<body>
+     
+       	   <div class="test">
+              <p>模拟虚线框</p>
+           </div>
+           
+             
+
+         
+</body>
+</html>

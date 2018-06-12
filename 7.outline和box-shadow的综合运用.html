@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+	  一个div实现内有圆角，边框是方形的盒子
+	 -->
+	<style type="text/css">
+	  html{height: 100%;}
+      body{margin:0;}
+       
+		.test{
+			  width:300px;
+	      	  height: 150px;
+	      	  padding:10px;
+	      	  margin:30px auto;
+	      	  border-radius: 15px;
+	      	  background: #f3e05e;
+	      	  outline:20px solid red;
+	      	
+		}
+	</style>
+</head>
+<body>
+   
+        <div class="test"> 
+         一个div实现内有圆角，边框是方形的盒子<br>
+         outline为外面的红色描边<br>
+         用box-shadow将空隙填满
+        </div>
+        <button onclick="tj()">添加box-shadow属性</button>
+        <script type="text/javascript">
+            var test=document.getElementsByClassName('test')[0];
+            var now=false;
+        	function tj(){
+                now=!now;
+                if(now){
+                	test.style.boxShadow='0 0 0 7px #f91f1f';
+                }else{
+                	test.style.boxShadow='';
+                }
+               
+        	}
+        </script>
+</body>
+</html>

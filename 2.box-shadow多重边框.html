@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	  html{height: 100%;}
+        p{margin:0;}
+	
+		.test{
+          cursor: pointer;/*外阴影无法选中元素*/
+		      width: 300px;
+	      	height: 150px;
+	      	background-color:#e4e4dd;
+          margin:60px auto;
+          box-shadow: 0 0 0 15px rgba(119, 94, 84,.5),
+                      0 0 0 30px #999,
+                      0 0 0 45px #000;
+		}
+    .test_inset{
+        cursor: pointer;
+        padding: 45px;
+        box-shadow: 0 0 0 15px rgba(119, 94, 84,.5) inset,
+                   0 0 0 30px #999 inset,
+                   0 0 0 45px #000 inset;
+
+
+    }
+	</style>
+</head>
+<body style="padding: 1px">
+      
+       	   <div class="test">
+               外边框阴影：<br>
+       	   	   box-shadow 设置多个阴影用逗号隔开，
+               最先设置的阴影在最上面，覆盖下面设置的阴影。
+       	   </div>
+
+            <div class="test test_inset">
+               内边框阴影：<br>
+               会受到box-size:border-box;影响
+           </div>
+     
+</body>
+</html>

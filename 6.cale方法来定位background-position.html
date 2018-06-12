@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+	 用calc()方法来实现背景图片的精确定位
+	 -->
+	<style type="text/css">
+	  html{height: 100%;}
+      body{margin:0;}
+		.test{
+              cursor: pointer;
+              margin:50px auto;
+		      width: 300px;
+	      	  height: 150px;
+              border:2px solid #000;
+	      	  background:url(img/icon_after_service.png) no-repeat #999;
+              background-position:calc(100% - 20px) calc(100% - 20px);
+		}
+	</style>
+</head>
+<body>
+<div>
+<div>
+    background-position:calc(100% - 20px) calc(100% - 20px);
+    <p>第一个calc(100% - 20px)是相对于X轴的位置</p>
+    <p>第二个calc(100% - 20px)是相对于Y轴的位置</p>
+    <p style="color:red;">注意:使用calc()方法时，运算符前后要有空格</p>
+</div>	
+	 
+        
+ <div class="test"></div>
+       
+       	 
+</body>
+</html>

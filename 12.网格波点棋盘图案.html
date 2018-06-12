@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+     网格 波点 棋盘图案
+	 -->
+	<style type="text/css">
+	    html{height: 100%;}
+        p,body{margin:0;padding: 0;}
+         p,h4{text-align: center;font-size: 16px} 
+/*------------------------------一.线性渐变-网格图案-------------------------------*/
+/*1.类似桌布的网格*/
+  		.test{width:200px;
+  	      	  height: 200px;
+        	  margin:10px auto;
+              background:#fff;/*背景颜色在下层*/ /*背景图片在上层*/
+              background-image:linear-gradient(0deg
+                                            ,rgba(249, 6, 6, 0.24) 50%
+                                            ,transparent 0),
+                             linear-gradient(90deg
+                                            ,rgba(249, 6, 6, 0.24) 50%
+                                            ,transparent 0);
+              background-size:20px 20px; 
+
+  		}
+/*2.可以调节网格线的网格*/
+  		.test1{
+  			 background-color: #2196f3;
+  			 background-image:linear-gradient(0deg
+                                            ,white 1px
+                                            ,transparent 0),
+                             linear-gradient(90deg
+                                            ,white 1px
+                                            ,transparent 0);
+             background-size:20px 20px;
+  		}
+/*3.调节后的网格*/
+		.test2{
+		  			 background-color: #2196f3;
+		  			 background-image:linear-gradient(0deg
+		                                            ,white 2px
+		                                            ,transparent 0),
+		                             linear-gradient(90deg
+		                                            ,white 1px
+		                                            ,transparent 0);
+
+		             background-size:20px 20px,/*对应0deg渐变网格的大小*/
+		                             40px 40px;/*对应90deg渐变网格的大小*/
+		                            
+		  		}
+/*--------------------------------二.径向渐变-波点图案-----------------*/
+/*1.简单的波点图案*/
+    .radial{width:200px;
+  	      	height: 200px;
+        	margin:10px auto;
+            background:#f5f5f5;/*背景颜色在下层*/ /*背景图片在上层*/
+            background-image:radial-gradient(rgba(249, 6, 6, 0.24) 50%
+                                            ,transparent 0);
+                           
+            background-size:20px 20px; 
+
+    }
+/*2.叠加两层渐变并调整位置的波点图案*/
+    .radial1{ background-image:radial-gradient(rgba(249, 6, 6, 0.24) 50%
+                                               ,transparent 0),
+                               radial-gradient(rgba(249, 6, 6, 0.24) 50%
+                                               ,transparent 0);
+              background-position: 0 0,/*调整第一层径向渐变的位置*/
+                                   10px 10px;/*调整第二层径向渐变的位置*/ 
+    }
+ /*------------------------------三.线性渐变-棋盘-----------------------*/   
+    .qp{width:200px;
+	    height: 200px;
+    	margin:10px auto;
+        background:#f5f5f5;/*背景颜色在下层*/ /*背景图片在上层*/
+        background-image:linear-gradient(45deg
+        	                            ,transparent 75%
+                                        ,rgba(249, 6, 6, 1) 0),
+                          linear-gradient(225deg
+        	                            ,transparent 75%
+                                        ,rgba(249, 6, 6, 1) 0),
+                          linear-gradient(45deg
+        	                            ,transparent 75%
+                                        ,rgba(249, 6, 6, 1) 0),
+                          linear-gradient(225deg
+        	                            ,transparent 75%
+                                        ,rgba(249, 6, 6, 1) 0);
+                        
+        background-size:20px 20px;
+        background-position: 0 0,0 0,10px 10px,10px 10px;
+                             
+    }
+    /*2.控制背景颜色来改变的棋盘网格颜色*/
+    .qp1{
+    	 background:#ffeb3b;
+         background-image:linear-gradient(45deg
+        	                            ,#bbb 25%
+        	                            ,transparent 0),
+                          linear-gradient(45deg
+        	                            ,transparent 75%
+        	                            ,#bbb 0),
+                          linear-gradient(45deg
+        	                            ,#bbb 25%
+        	                            ,transparent 0),
+                          linear-gradient(45deg
+        	                            ,transparent 75%
+        	                            ,#bbb 0);
+                         
+                        
+        background-size:20px 20px;
+        background-position: 0 0,10px 10px,10px 10px;;
+    }
+    /*简化代码*/
+    .qp2{
+    	 background:#f5f5f5;
+         background-image:linear-gradient(45deg
+         	                              ,rgba(0,0,0,.25) 25%
+								          ,transparent 0
+								          ,transparent 75%
+								          ,rgba(0,0,0,.25) 0),
+						  linear-gradient(45deg
+         	                              ,rgba(0,0,0,.25) 25%
+								          ,transparent 0
+								          ,transparent 75%
+								          ,rgba(0,0,0,.25) 0);		       
+                          
+        background-size:20px 20px;
+        background-position: 0 0,10px 10px;
+    }
+	</style>
+</head>
+<body>
+      <div style="width: 50%;float:left;">
+        <h4>线性渐变-网格图案</h4>
+        <p>1.类似桌布的网格</p>
+        <div class="test"></div> 
+        <p>2.可以调节网格线的网格</p>
+        <div class="test test1"></div> 
+        <p>3.调节后的网格</p>
+        <div class="test test2"></div>
+      </div>
+      <div style="width: 50%;float:right;">
+        <h4>径向渐变-波点图案</h4>
+        <p>1.简单的波点图案</p>
+        <div class="radial"></div> 
+        <p>2.叠加两层渐变的波点图案</p>
+        <div class="radial radial1"></div> 
+
+        <h4>线性渐变-棋盘图案</h4>
+        <p>1.棋盘图案</p>
+        <div class="qp"></div>
+        <p>2.控制背景颜色来改变的棋盘网格颜色</p>
+        <div class="qp qp1"></div>
+         <p>3.简化代码</p>
+        <div class="qp qp2"></div>
+      </div>
+</body>
+</html>

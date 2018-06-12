@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 
+	background-origin:
+	默认情况下值为：padding-box
+	还有content-box和border-box
+	 -->
+	<style type="text/css">
+	  html{height: 100%;}
+      body{margin:0;}
+		.test{
+              cursor: pointer;
+              margin:50px auto;
+		      width: 300px;
+	      	  height: 300px;
+	      	  padding: 30px;
+              border:20px solid #000;
+	      	  background:url(img/icon_after_service.png) no-repeat #999;
+              background-position:right bottom;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<img src="img/ps.png" style="float: left;">
+	 1：background-origin:默认padding-box;
+        background-position相对于padding-box定位 
+	 <br>
+	 2：background-origin:设置为content-box;
+        background-position相对于content-box定位 
+        <br>
+	 3：background-origin:设置为border-box;
+        background-position相对于border-box定位 
+	 
+        
+       	 <div class="test"></div>
+       	 <select style="float: right;margin-right: 200px;" onchange="change(this.value)">
+       	 	<option value="padding-box">padding-box</option>
+       	 	<option value="content-box">content-box</option>
+       	 	<option value="border-box">border-box</option>
+       	 </select>
+       	 <script type="text/javascript">
+       	    var otest=document.querySelector('.test');
+       	 	function change(value){
+                 otest.style.backgroundOrigin=value;
+       	 	}
+       	 </script>
+</body>
+</html>
